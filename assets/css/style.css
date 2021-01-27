@@ -1,0 +1,277 @@
+body {
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    font-family: "Trip Sans";
+}
+
+.container {
+    max-width: 1328px;
+
+    margin: 0 auto;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.deb_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 188px;
+    display: flex;
+}
+
+header nav ul {
+    display: flex;
+    line-height: 50px;
+}
+
+header nav ul li {
+    flex: 2;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    max-width: 110px;
+    padding: 0 20px;
+}
+
+header nav ul li > i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+header nav ul li:hover {
+    border: 2px solid #000;
+    border-radius: 10px;
+    line-height: 50px;
+}
+
+button {
+    width: 148px;
+    height: 39px;
+    background-color: black;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 54px;
+    margin-top: 40px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+h1 > span {
+    color: #fe5d5d;
+}
+
+input#site-search {
+    width: 300px;
+    margin-left: 100px;
+    border-radius: 10px;
+    border: lightgrey solid 2px;
+    box-shadow: none;
+    height: 40px;
+}
+.search {
+    position: relative;
+}
+.search-button {
+    color: #fff;
+    position: absolute;
+    left: 18%;
+    z-index: 1000;
+    width: 80px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* SECOND MENU */
+main nav.subNav ul {
+    margin: 26px 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+main nav.subNav ul li {
+    display: flex;
+    flex: 1;
+    border-radius: 12px;
+    border: #000 solid 2px;
+    height: 100%;
+    width: 100%;
+    min-width: 150px;
+    padding: 11px 13px 11px 14px;
+    align-items: stretch;
+    padding-top: 16px;
+    display: block;
+    line-height: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    min-height: 75px;
+}
+
+main nav.subNav ul li:nth-child(-n + 6) {
+    margin-right: 20px;
+}
+main nav.subNav ul li:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+main nav.subNav ul li > i {
+    position: absolute;
+    right: 12px;
+    top: 16px;
+    font-size: 20px;
+}
+
+/* BLOC PHOTOS */
+
+.bloc_photos {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.box1 {
+    margin-right: 2px;
+    flex: 2;
+}
+.box1 img {
+    width: 100%;
+    background-color: #000;
+    max-height: 430px;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 15px 0 0 15px;
+}
+
+.box2 {
+    max-height: 430px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.box2 img {
+    height: 50%;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0 15px 0 0;
+}
+
+.box2 img:nth-child(2) {
+    border-radius: 0 0 15px 0;
+}
+
+.ariane ul {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+
+/* Paris */
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.paris {
+    display: flex;
+}
+
+.desc {
+    font-size: 20px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+    font-weight: 100;
+    line-height: 1.2;
+}
+.orga {
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-weight: 100;
+}
+
+.top_orga {
+    background-color: #fe5d5d;
+    padding: 40px;
+    border-radius: 10px 10px 0 0;
+    line-height: 1.2;
+}
+
+.orga img {
+    border-radius: 25px;
+    border-radius: 0 0 10px 10px;
+    object-fit: cover;
+    height: 220px;
+}
+
+h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+button.voyage {
+    margin-left: 0;
+    margin-top: 30px;
+    line-height: 40px;
+}
+
+h4 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 80px;
+    background-color: #fff;
+    width: auto;
+    padding: 0 12px;
+}
+
+.titre::before {
+    position: absolute;
+    content: "";
+    border-bottom: solid #000 1px;
+}
