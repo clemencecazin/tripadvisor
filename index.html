@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <div class="container menu">
+            <div class="container">
                 <div class="deb_header">
                     <div class="logo">
                         <img src="./assets/img/tripadvisor_logo.svg" />
@@ -37,17 +37,17 @@
                         <li>
                             <i class="fas fa-plus-circle"></i>
 
-                            Publier
+                            <span>Publier</span>
                         </li>
                         <li>
                             <i class="fas fa-bell"></i>
 
-                            Alerte
+                            <span>Alerte</span>
                         </li>
                         <li>
                             <i class="fas fa-heart"></i>
 
-                            Voyages
+                            <span>Voyages</span>
                         </li>
                         <button class="connect">Connectez-vous</button>
                     </ul>
@@ -62,19 +62,28 @@
                     <nav class="subNav">
                         <ul>
                             <li>
-                                Conseils de voyage
+                                <span>Conseils de voyage</span>
                                 <i class="fas fa-flag"></i>
                             </li>
-                            <li>Hôtels<i class="fas fa-bed"></i></li>
                             <li>
-                                Locations de vacances
+                                <span>Hôtels</span>
+                                <i class="fas fa-bed"></i>
+                            </li>
+                            <li>
+                                <span>Locations de vacances</span>
                                 <i class="fas fa-home"></i>
                             </li>
-                            <li>Activités<i class="fas fa-ticket-alt"></i></li>
-                            <li>Restaurants<i class="fas fa-utensils"></i></li>
                             <li>
-                                Forums de <br />voyage<i
-                                    class="fas fa-comment-alt"
+                                <span>Activités</span>
+                                <i class="fas fa-ticket-alt"></i>
+                            </li>
+                            <li>
+                                <span>Restaurants</span>
+                                <i class="fas fa-utensils"></i>
+                            </li>
+                            <li>
+                                <span></span>Forums de <br />voyage</span>
+                                <i class="fas fa-comment-alt"
                                 ></i>
                             </li>
                             <li>Plus<i class="fas fa-ellipsis-h"></i></li>
@@ -84,16 +93,22 @@
                     <!-- BLOC PHOTO-->
                     <div class="bloc_photos">
                         <div class="box1">
-                            <img src="./assets/img/caption.jpg" />
+                                <img
+                                    src="./assets/img/caption.jpg"
+                                    alt="Paris"
+                                />
+            
                         </div>
                         <div class="box2">
                             <img
                                 src="./assets/img/caption_1.jpg
                             "
+                                alt="Paris"
                             />
                             <img
                                 src="./assets/img/caption_2.jpg
                             "
+                                alt="Paris"
                             />
                         </div>
                     </div>
@@ -105,8 +120,8 @@
                             <li>France&nbsp; >&nbsp;</li>
                             <li>Île-de-France&nbsp; >&nbsp;</li>
                             <li>Paris</li>
-                            <li class="ville_droite">Visiter Paris</li>
                         </ul>
+                        <div class="ville_droite">Visiter Paris</div>
                     </nav>
 
                     <!-- DESCRIPTION -->
@@ -141,10 +156,66 @@
 
                     <!-- Conseil de voyage -->
 
-                    <h4 class="titre">Conseil de voyage</h4>
+                    <h4 class="titre">Conseils de voyage</h4>
+
+                    <div class="conseils">
+                        <ul>
+                            <li>
+                                <img
+                                    src="./assets/img/picto_soleil.svg"
+                                    alt="soelil"
+                                />
+                                Meilleure période pour visiter
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/img/picto_pied.svg"
+                                    alt="soelil"
+                                />
+                                Se déplacer
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/img/picto_verre.svg"
+                                    alt="soelil"
+                                />
+                                Coutumes locales
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/img/picto_light.svg"
+                                    alt="soelil"
+                                />
+                                Conseils de pros
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Immanquable de Paris -->
+
+                    <h4 class="titre">Immanquable de Paris</h4>
+                    <div class="caroussel">
+                        <h5>Se divertir</h5>
+                        <p>
+                            Des lieux à voir, des rues à explorer et des
+                            expériences
+                        </p>
+                        <a>Tout afficher</a>
+
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
                 </section>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="container">
+                <img src="./assets/img/logo_responsive.svg" />
+                2021 Formation Le Reacteur - Clémence CAZIN
+            </div>
+        </footer>
     </body>
 </html>

@@ -1,16 +1,15 @@
 body {
     background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     color: black;
     font-weight: bold;
-    font-family: "Trip Sans";
+    font-family: "Trip Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
     max-width: 1328px;
-
     margin: 0 auto;
 }
 
@@ -20,7 +19,7 @@ header {
     align-items: center;
 }
 
-.menu {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,6 +49,7 @@ header nav ul li {
     cursor: pointer;
     max-width: 110px;
     padding: 0 20px;
+    border: solid 2px transparent;
 }
 
 header nav ul li > i {
@@ -73,10 +73,11 @@ button {
     font-size: 16px;
     font-weight: bold;
     margin-left: 20px;
+    align-self: center;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }
 
@@ -84,7 +85,7 @@ h1 {
     font-size: 54px;
     margin-top: 40px;
     font-weight: 600;
-    font-family: sans-serif;
+    font-family: "tripsans-ultra", sans-serif;
 }
 h1 > span {
     color: #fe5d5d;
@@ -111,7 +112,9 @@ input#site-search {
     margin: 0;
 }
 
+/* ----------- */
 /* SECOND MENU */
+
 main nav.subNav ul {
     margin: 26px 0;
     display: flex;
@@ -129,11 +132,9 @@ main nav.subNav ul li {
     padding: 11px 13px 11px 14px;
     align-items: stretch;
     padding-top: 16px;
-    display: block;
     line-height: 20px;
     cursor: pointer;
     box-sizing: border-box;
-    text-align: left;
     position: relative;
     min-height: 75px;
 }
@@ -166,11 +167,11 @@ main nav.subNav ul li > i {
     box-sizing: border-box;
 }
 
-.box1 {
+.bloc_photos .box1 {
     margin-right: 2px;
     flex: 2;
 }
-.box1 img {
+.bloc_photos .box1 img {
     width: 100%;
     background-color: #000;
     max-height: 430px;
@@ -179,39 +180,45 @@ main nav.subNav ul li > i {
     border-radius: 15px 0 0 15px;
 }
 
-.box2 {
+.bloc_photos .box2 {
     max-height: 430px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.box2 img {
+.bloc_photos .box2 img {
     height: 50%;
     object-fit: cover;
     width: 100%;
     border-radius: 0 15px 0 0;
 }
 
-.box2 img:nth-child(2) {
+.bloc_photos .box2 img:nth-child(2) {
     border-radius: 0 0 15px 0;
 }
 
-.ariane ul {
-    font-size: 12px;
+nav.ariane {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
     margin-top: 20px;
     font-weight: 100;
     margin-bottom: 40px;
 }
 
+nav.ariane ul {
+    display: flex;
+}
+
+/* ----------- */
 /* Paris */
 
 h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 30px;
+    font-family: "tripsans-ultra", sans-serif;
 }
 .paris {
     display: flex;
@@ -237,7 +244,7 @@ h2 {
 
 .top_orga {
     background-color: #fe5d5d;
-    padding: 40px;
+    padding: 32px;
     border-radius: 10px 10px 0 0;
     line-height: 1.2;
 }
@@ -252,7 +259,7 @@ h2 {
 h3 {
     font-size: 32px;
     margin-bottom: 30px;
-    font-weight: bold;
+    font-family: "tripsans-ultra", sans-serif;
 }
 
 button.voyage {
@@ -261,6 +268,9 @@ button.voyage {
     line-height: 40px;
 }
 
+/* ----------- */
+/* CONSEILS */
+
 h4 {
     text-align: center;
     font-size: 28px;
@@ -268,10 +278,53 @@ h4 {
     background-color: #fff;
     width: auto;
     padding: 0 12px;
+    margin-bottom: 42px;
+    font-family: "tripsans-ultra", sans-serif;
 }
 
 .titre::before {
     position: absolute;
     content: "";
     border-bottom: solid #000 1px;
+}
+
+.conseils ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.conseils ul li {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 20px;
+    flex: 1;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    max-width: 290px;
+    padding: 0 10px;
+    line-height: 1.2;
+}
+
+.conseils ul li:hover {
+    border: 2px solid black;
+}
+
+.conseils ul li img {
+    height: 80px;
+}
+
+/* ----------- */
+/* FOOTER */
+
+footer {
+    height: 80px;
+    background-color: #f9f1ec;
+    display: flex;
+    justify-content: flex-start;
+}
+
+footer img {
+    height: 50px;
 }
