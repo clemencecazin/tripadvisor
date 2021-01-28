@@ -1,8 +1,0 @@
-@font-face {
-    font-family: "Trip Sans";
-    src: url("TripSans-Regular.woff2") format("woff2"),
-        url("TripSans-Regular.woff") format("woff");
-    font-weight: normal, 500;
-    font-style: normal;
-    font-display: swap;
-}
