@@ -603,6 +603,12 @@ footer img {
         top: 48%;
         right: 0px;
     }
+
+    .conseils ul li {
+        width: 100%;
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -649,5 +655,9 @@ footer img {
 
     main nav.subNav ul li {
         min-height: 0;
+    }
+
+    footer {
+        padding: 0 20px;
     }
 }
