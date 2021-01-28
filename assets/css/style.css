@@ -19,7 +19,7 @@ body {
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 header {
@@ -101,16 +101,21 @@ h1 > span {
 }
 
 input#site-search {
-    width: 300px;
-    margin-left: 30px;
+    width: 250px;
     border-radius: 10px;
     border: lightgrey solid 2px;
     box-shadow: none;
     height: 40px;
 }
-/* .search {
-    position: relative;
+.search {
+    margin-left: 30px;
 }
+
+.search i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+/*
 .search-button {
     color: #fff;
     position: absolute;
@@ -357,7 +362,7 @@ h4:before {
     background-color: #fff;
     font-weight: 100;
     padding-right: 20px;
-    max-width: 324px;
+    width: calc(100% / 4);
 }
 
 .divertir .first_caroussel p {
@@ -382,11 +387,13 @@ h4:before {
 }
 
 .caroussel div {
-    width: 33.333%;
     background-color: white;
     flex-shrink: 0;
-    padding-right: 15px;
-    box-sizing: border-box;
+    width: calc(100% / 3 - (30px / 3));
+}
+
+.caroussel div:not(:last-child) {
+    margin-right: 20px;
 }
 
 h5 {
@@ -445,7 +452,7 @@ h5 {
 
 .caroussel div i {
     position: absolute;
-    right: 30px;
+    right: 10px;
     top: 10px;
     height: 40px;
     background-color: #fff;
@@ -455,11 +462,17 @@ h5 {
     justify-content: center;
     border-radius: 50%;
     font-size: 20px;
+    z-index: 1000;
+}
+
+.caroussel div i:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .fleche {
     position: absolute;
-    right: -7px;
     background-color: #fff;
     width: 40px;
     height: 40px;
@@ -470,6 +483,7 @@ h5 {
     justify-content: center;
     font-size: 24px;
     border: black solid 2px;
+    right: -22px;
 }
 
 .half-circle {
@@ -516,26 +530,124 @@ footer img {
 
 /* MEDIAS QUERY */
 
-@media (min-width: 1210px) {
+@media (min-width: 1024px) {
     ul li.vol {
         display: none !important;
     }
 }
 
 @media (max-width: 1210px) {
-    main nav.subNav ul li {
-        width: 25%;
-        /* height: 100px; */
-        flex: 1;
-        height: 50px;
-    }
-
-    main nav.subNav ul {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    main nav.subNav ul li:nth-child(-n + 7) {
+    ul li.vol {
         margin-right: 20px;
+    }
+
+    main nav.subNav ul li {
+        width: calc(100% / 4);
+        flex: 0 0 auto;
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    main nav.subNav ul li:nth-last-of-type(1) {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header nav ul li,
+    header button {
+        display: none;
+    }
+    .deb_header {
+        width: 100%;
+    }
+
+    .paris {
+        display: inherit;
+    }
+    .desc {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .orga {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .orga img {
+        height: auto;
+        width: 50%;
+        border-radius: 0 15px 15px 0;
+    }
+
+    .top_orga {
+        width: 50%;
+        border-radius: 15px 0 0 15px;
+    }
+
+    input#site-search {
+        display: none;
+    }
+
+    .caroussel div {
+        width: calc(100% / 2 - (30px / 3));
+    }
+
+    .fleche {
+        right: 5px;
+    }
+
+    .fleche {
+        top: 48%;
+        right: 0px;
+    }
+}
+
+@media (max-width: 700px) {
+    section {
+        padding: 0 20px;
+    }
+    .container {
+        padding: 0;
+    }
+    .ariane {
+        padding: 0 20px;
+    }
+    .paris {
+        padding: 0 20px;
+    }
+    .divertir {
+        display: inherit;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .divertir .first_caroussel,
+    .divertir .first_caroussel p {
+        width: 100%;
+    }
+
+    .caroussel div {
+        width: calc(100% / 1.2);
+    }
+
+    .caroussel img {
+        height: 262px;
+    }
+
+    .bloc_photos .box1 img {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .bloc_photos .box2,
+    .bloc_photos .box2 img {
+        display: none;
+    }
+
+    main nav.subNav ul li {
+        min-height: 0;
     }
 }
