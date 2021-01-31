@@ -7,6 +7,8 @@ $.addEventListener("DOMContentLoaded", () => {
         $.querySelector(".hidden").classList.toggle("display");
     });
 
+    const message_send = $.querySelector(".message_send");
+
     //   Ecoute de la soumission du formulaire
     $.querySelector("#contact-form").addEventListener(
         "submit",
@@ -27,13 +29,13 @@ $.addEventListener("DOMContentLoaded", () => {
             // console.log(data);
 
             const response = await axios.post(
-                "https://git.heroku.com/formulaire-clemence.git/form",
+                "https://formulaire-clemence.herokuapp.com/form",
                 data
             );
             console.log(response);
 
             if (response.status === 200) {
-                alert("Formulaire soumis, email envoyé");
+                message_send.classList.remove("hidden");
             } else {
                 alert("ERROR");
             }
