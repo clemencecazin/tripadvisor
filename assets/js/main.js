@@ -27,7 +27,7 @@ $.addEventListener("DOMContentLoaded", () => {
             // console.log(data);
 
             const response = await axios.post(
-                "http://localhost:3000/form",
+                "https://git.heroku.com/formulaire-clemence.git/form",
                 data
             );
             console.log(response);
