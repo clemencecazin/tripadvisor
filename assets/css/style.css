@@ -16,6 +16,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -88,10 +93,15 @@ button {
 button:hover {
     background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
 }
 
 h1 {
-    font-size: 54px;
+    font-size: 3.5vw;
     margin-top: 40px;
     font-weight: 600;
     font-family: "Trip Sans Med", sans-serif;
@@ -100,81 +110,168 @@ h1 > span {
     color: #fe5d5d;
 }
 
-input#site-search {
+/* input#site-search {
     width: 250px;
     border-radius: 10px;
     border: lightgrey solid 2px;
     box-shadow: none;
     height: 40px;
-}
+} */
+
 .search {
-    margin-left: 30px;
+    display: flex;
+    margin-left: 15px;
+    height: 39px;
 }
 
-.search i {
-    font-size: 22px;
-    margin-right: 10px;
+form.search input[type="text"] {
+    font-size: 18px;
+    border: 2px solid rgb(224, 224, 224);
+    width: 80%;
+    border-left: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
-/*
-.search-button {
-    color: #fff;
-    position: absolute;
-    left: 18%;
-    z-index: 1000;
-    width: 80px;
+
+form.search button {
+    width: 20%;
+    background: white;
+    color: black;
+    font-size: 20px;
+    border: 2px solid rgb(224, 224, 224);
+    padding: 10px 20px 10px 15px;
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: none;
+    align-items: center;
+    display: flex;
+}
+
+form.search button:hover,
+form.search input[type="text"]:hover,
+form.search input[type="text"]:focus {
+    outline: none;
+}
+
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.hidden {
+    display: none;
+}
+
+.display {
+    display: flex;
+}
+
+/* MODAL ET FORMULAIRE */
+
+.modal {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+}
+
+.modal form {
+    height: 588px;
+    width: 100%;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 0 25px 0;
     border-radius: 10px;
-    margin: 0;
-} */
+    max-width: 500px;
+    margin-top: 110px;
+    z-index: 10000;
+    margin: auto;
+}
+
+h6 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.modal input,
+textarea {
+    width: 75%;
+    margin-bottom: 20px;
+    outline: none;
+    border: rgb(214, 214, 214) 2px solid;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+.modal input[type="submit"] {
+    background-color: #7359dc;
+    color: white;
+    width: 81%;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+.modal input[type="submit"]:hover {
+    background-color: #876ee7;
+}
 
 /* ----------- */
 /* SECOND MENU */
 
-main nav.subNav {
+/* ------ Navigation menu ------ */
+.menu {
+    margin-bottom: 50px;
+    display: flex;
     padding: 26px 0;
-}
-
-main nav.subNav ul {
     margin: 26px 0;
-    display: flex;
-    flex-flow: row wrap;
-    background-color: white;
 }
 
-main nav.subNav ul li {
-    display: flex;
+.menu div {
+    border: black solid 2px;
     flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
     border-radius: 12px;
-    border: #000 solid 2px;
-    height: 100%;
-    width: 100%;
-    min-width: 150px;
-    padding: 11px 13px 11px 14px;
-    align-items: stretch;
     padding-top: 16px;
     line-height: 20px;
-    cursor: pointer;
-    box-sizing: border-box;
-    position: relative;
-    min-height: 75px;
+    padding: 15px;
 }
 
-main nav.subNav ul li:nth-child(-n + 6) {
+.menu div:hover {
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
+
+.menu div:nth-child(7) {
+    display: none;
+}
+
+.menu div:not(:last-child) {
     margin-right: 20px;
 }
-main nav.subNav ul li:hover {
-    background-color: #000;
-    color: #fff;
-}
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-main nav.subNav ul li > i {
-    position: absolute;
-    right: 12px;
-    top: 16px;
+.menu div i {
     font-size: 20px;
 }
 
@@ -218,6 +315,14 @@ main nav.subNav ul li > i {
     margin-top: 2px;
 }
 
+.bloc_photos div:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* ----------- */
+/* ARIANE */
+
 nav.ariane {
     display: flex;
     justify-content: space-between;
@@ -229,6 +334,11 @@ nav.ariane {
 
 nav.ariane ul {
     display: flex;
+}
+
+nav.ariane ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* ----------- */
@@ -300,7 +410,7 @@ h4 {
     text-align: center;
     font-family: "Trip Sans Med", sans-serif;
     margin-top: 80px;
-    margin-bottom: 80px;
+    margin-bottom: 42px;
 }
 
 h4:before,
@@ -319,6 +429,13 @@ h4:after {
 h4:before {
     margin-left: -51%;
     text-align: right;
+}
+
+.conseils p {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    margin-bottom: 30px;
 }
 
 .conseils ul {
@@ -352,26 +469,26 @@ h4:before {
 /* ----------- */
 /* CAROUSSEL */
 
-.divertir {
+.immmanquable {
     display: flex;
     position: relative;
     margin-top: 60px;
 }
 
-.divertir .first_caroussel {
+.immmanquable .bloc_txt {
     background-color: #fff;
     font-weight: 100;
     padding-right: 20px;
     width: calc(100% / 4);
 }
 
-.divertir .first_caroussel p {
+.immmanquable .bloc_txt p {
     line-height: 1.2;
     margin-top: 20px;
     font-size: 18px;
 }
 
-.divertir .first_caroussel a {
+.immmanquable .bloc_txt a {
     line-height: 50px;
     font-size: 14px;
     font-weight: bold;
@@ -389,7 +506,7 @@ h4:before {
 .caroussel div {
     background-color: white;
     flex-shrink: 0;
-    width: calc(100% / 3 - (30px / 3));
+    width: calc(100% / 3 - (40px / 3));
 }
 
 .caroussel div:not(:last-child) {
@@ -528,40 +645,67 @@ footer img {
     height: 60px;
 }
 
-/* MEDIAS QUERY */
-
-@media (min-width: 1024px) {
-    ul li.vol {
-        display: none !important;
-    }
+.container .deb_header > i {
+    display: none;
 }
 
-@media (max-width: 1210px) {
-    ul li.vol {
+/* MEDIAS QUERY */
+
+/* @media (min-width: 1310px) {
+    main nav.subNav ul li:nth-child(7) {
+        display: none !important;
+    }
+} */
+
+/* @media (max-width: 1310) { */
+/* main nav.subNav ul li:nth-child(7) l {
         margin-right: 20px;
     }
 
-    main nav.subNav ul li {
+    /* main nav.subNav ul {
         width: calc(100% / 4);
         flex: 0 0 auto;
         flex: 1;
         margin-bottom: 20px;
+    }*/
+
+/* main nav.subNav ul li:not(:last-child) {
+        margin-right: 0px;
     }
 
-    main nav.subNav ul li:nth-last-of-type(1) {
+    main nav.subNav ul li {
+        width: calc(25% - (60px / 4)) !important;
+        margin-right: 0 !important;
+    }
+
+    main nav.subNav ul {
+        flex-wrap: wrap !important;
+    }*/
+
+/* } */
+
+@media (max-width: 1328px) {
+    .menu div:nth-child(7) {
+        display: flex;
+    }
+    .menu div:not(:last-child) {
+        margin-right: 0px;
+    }
+    .menu div {
+        min-width: calc(100% / 4 - (60px / 4));
+    }
+    .menu {
+        flex-wrap: wrap;
+    }
+    .menu div:not(:nth-child(4n)) {
         margin-right: 20px;
+    }
+    .menu div:nth-child(-n + 4) {
+        margin-bottom: 20px;
     }
 }
 
-@media (max-width: 1024px) {
-    header nav ul li,
-    header button {
-        display: none;
-    }
-    .deb_header {
-        width: 100%;
-    }
-
+@media (min-width: 723px) and (max-width: 1024px) {
     .paris {
         display: inherit;
     }
@@ -586,9 +730,15 @@ footer img {
         width: 50%;
         border-radius: 15px 0 0 15px;
     }
+}
 
-    input#site-search {
+@media (max-width: 1024px) {
+    header nav ul li span {
         display: none;
+    }
+
+    header nav ul li {
+        padding: 10px;
     }
 
     .caroussel div {
@@ -611,29 +761,90 @@ footer img {
     }
 }
 
-@media (max-width: 700px) {
-    section {
-        padding: 0 20px;
+@media (max-width: 723px) {
+    .container:not(.bloc_photos) {
+        padding: 0 30px;
     }
-    .container {
+
+    .menu div {
+        min-width: calc(100% / 2 - (60px / 2));
+    }
+
+    .menu div:not(:nth-child(odd)) {
+        margin-right: 0px;
+    }
+    .menu div:nth-child(-n + 6) {
+        margin-bottom: 20px;
+    }
+
+    header nav ul li,
+    header button {
+        display: none;
+    }
+    .deb_header {
+        width: 100%;
+    }
+
+    .logo img {
+        width: 160px;
+    }
+
+    .search {
+        margin: 0;
+    }
+
+    form.search input[type="text"] {
+        display: none;
+    }
+
+    form.search button {
+        border: transparent;
+        font-size: 22px;
         padding: 0;
     }
+
     .ariane {
         padding: 0 20px;
     }
     .paris {
         padding: 0 20px;
     }
-    .divertir {
+    .immmanquable {
         display: inherit;
         width: 100%;
         max-width: 100%;
     }
 
-    .divertir .first_caroussel,
-    .divertir .first_caroussel p {
+    .immmanquable .bloc_txt,
+    .immmanquable .bloc_txt p {
         width: 100%;
     }
+
+    /* BLOC PARIS */
+
+    .paris {
+        display: inherit;
+    }
+    .desc {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .orga {
+        width: 100%;
+    }
+
+    .orga img {
+        height: 200px;
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .top_orga {
+        border-radius: 15px 15px 0 0;
+    }
+
+    /* CAROUSSEL */
 
     .caroussel div {
         width: calc(100% / 1.2);
@@ -659,5 +870,10 @@ footer img {
 
     footer {
         padding: 0 20px;
+    }
+
+    .container .deb_header > i {
+        display: inherit;
+        font-size: 25px;
     }
 }

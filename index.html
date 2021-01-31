@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
         <link rel="stylesheet" href="./assets/css/fonts.css" />
+        <script src="./assets/js/main.js"></script>
+
         <script
             src="https://kit.fontawesome.com/4e2f74f389.js"
             crossorigin="anonymous"
@@ -17,22 +19,18 @@
         <header>
             <div class="container">
                 <div class="deb_header">
+                    <i class="fas fa-bars"></i>
+
                     <div class="logo">
                         <img src="./assets/img/tripadvisor_logo.svg" />
                     </div>
-                    <div class="search">
-                        <!-- <button class="search-button">
-                            <i class="fas fa-search"></i>
-                        </button> -->
-                        <i class="fas fa-search"></i>
 
-                        <input
-                            type="search"
-                            id="site-search"
-                            name="q"
-                            aria-label="Search through site content"
-                        />
-                    </div>
+                        <form class="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+
+                            <input type="text" placeholder="" name="search">
+                          </form>
+
                 </div>
                 <nav>
                     <ul>
@@ -52,6 +50,58 @@
                             <span>Voyages</span>
                         </li>
                         <button class="connect">Connectez-vous</button>
+                        <div class="hidden">
+                            <div class="modal">
+
+                                <form id="contact-form">
+                                    <h6>Formulaire de contact</h6>
+                    
+                                    <!-- firstName -->
+                                    <input
+                                        type="text"
+                                        name="firstname"
+                                        placeholder="Prénom"
+                                        id="firstname"
+                                    />
+                    
+                                    <!-- lastName -->
+                    
+                                    <input
+                                        type="text"
+                                        name="lastname"
+                                        placeholder="Nom"
+                                        id="lastname"
+                                    />
+                    
+                                    <!-- email -->
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="adresse mail"
+                                        id="email"
+                                    />
+                    
+                                    <!-- email -->
+                                    <input
+                                        type="subject"
+                                        name="subject"
+                                        placeholder="Sujet"
+                                        id="subject"
+                                    />
+                    
+                                    <!-- message -->
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        cols="30"
+                                        rows="10"
+                                        placeholder="Votre message ici"
+                                    ></textarea>
+                    
+                                    <input type="submit" value="Envoyer le formulaire" />
+                                </form>
+                                </div>
+                        </div>
                     </ul>
                 </nav>
             </div>
@@ -61,42 +111,21 @@
             <div class="container">
                 <section>
                     <h1><span>Explorer</span> Paris</h1>
-                    <nav class="subNav">
-                        <ul>
-                            <li>
-                                <span>Conseils de voyage</span>
-                                <i class="fas fa-flag"></i>
-                            </li>
-                            <li>
-                                <span>Hôtels</span>
-                                <i class="fas fa-bed"></i>
-                            </li>
-                            <li>
-                                <span>Locations de vacances</span>
-                                <i class="fas fa-home"></i>
-                            </li>
-                            <li>
-                                <span>Activités</span>
-                                <i class="fas fa-ticket-alt"></i>
-                            </li>
-                            <li>
-                                <span>Restaurants</span>
-                                <i class="fas fa-utensils"></i>
-                            </li>
-
-                            <li>
-                                <span></span>Forums de &nbsp;voyage</span>
-                                <i class="fas fa-comment-alt"
-                                ></i>
-                            </li>
-                            <li class="vol">
-                                Vol <i class="fas fa-plane"></i>
 
 
-                            </li>
-                            <li>Plus<i class="fas fa-ellipsis-h"></i></li>
-                        </ul>
-                    </nav>
+                            <!-- Navigation menu -->
+                <nav class="menu">
+                    <div><span>Conseils de voyage</span><i class="fas fa-flag"></i></div>
+                    <div><span>Hôtels </span> <i class="fas fa-bed"></i></div>
+                    <div><span>Locations de vacances</span> <i class="fas fa-home"></i></div>
+                    <div><span>Activités</span><i class="fas fa-ticket-alt"></i></i></div>
+                    <div><span>Restaurants</span><i class="fas fa-ticket-alt"></i></div>
+                    <div><span>Forums de voyage</span> <i class="fas fa-comment-alt"
+                        ></i></div>
+                    <div><span>Vols</span><i class="fas fa-plane"></i></div>
+                    <div><span>Plus</span><i class="fas fa-ellipsis-h"></i></div>
+                </nav>
+                 
 
                     <!-- BLOC PHOTO-->
                     <div class="bloc_photos">
@@ -124,12 +153,16 @@
                     <!-- ARIANE -->
                     <nav class="ariane">
                         <ul>
-                            <li>Europe&nbsp; >&nbsp;</li>
-                            <li>France&nbsp; >&nbsp;</li>
-                            <li>Île-de-France&nbsp; >&nbsp;</li>
-                            <li>Paris </li>
+                            <li>Europe</li>&nbsp; >&nbsp;
+                            <li>France</li>&nbsp; >&nbsp;
+                            <li>Île-de-France</li>&nbsp; >&nbsp;
+                            <li>Paris </i>&nbsp;<i class="fas fa-caret-down"></i>
+
+                            </i>
+
+                            </li>
                         </ul>
-                        <div class="ville_droite">Visiter Paris</div>
+                        <div class="ville_droite">Visiter : Paris</div>
                     </nav>
 
                     <!-- DESCRIPTION -->
@@ -168,34 +201,35 @@
                     <h4>Conseils de voyage</h4>
 
                     <div class="conseils">
+                        <p>Tout afficher</p>
                         <ul>
                             <li>
                                 <img
                                     src="./assets/img/picto_soleil.svg"
                                     alt="soelil"
                                 />
-                                Meilleure période pour visiter
+                                <span>Meilleure période pour visiter</span>
                             </li>
                             <li>
                                 <img
                                     src="./assets/img/picto_pied.svg"
                                     alt="soelil"
                                 />
-                                Se déplacer
+                                <span>Se déplacer</span> 
                             </li>
                             <li>
                                 <img
                                     src="./assets/img/picto_verre.svg"
                                     alt="soelil"
                                 />
-                                Coutumes locales
+                                <span>Coutumes locales</span>
                             </li>
                             <li>
                                 <img
                                     src="./assets/img/picto_light.svg"
                                     alt="soelil"
                                 />
-                                Conseils de pros
+                                <span>Conseils de pros</span>
                             </li>
                         </ul>
                     </div>
@@ -204,8 +238,8 @@
                     <!-- Immanquable de Paris -->
                     <section>
                     <h4>Immanquable de Paris</h4>
-                <div class="divertir">
-                    <div class="first_caroussel">
+                <div class="immmanquable">
+                    <div class="bloc_txt">
 
                         <h5>Se divertir</h5>
                         <p>
@@ -220,7 +254,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/eiffeltower.jpg"/>
-                          Tour Eiffel 
+                            <span>Tour Eiffel</span>
                           <div class="circle">
                           <div></div>
                           <div></div>
@@ -236,7 +270,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/louvre.jpg"/>
-                            Musée du louvre
+                            <span>Musée du louvre</span>
                             <div class="circle">
                             <div></div>
                             <div></div>
@@ -253,7 +287,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                           <img src="assets/img/arc-de-triomphe.jpg"/>
-                          Arc de Triomphe
+                          <span>Arv de Triomphe</span>
                           <div class="circle">
                           <div></div>
                           <div></div>
@@ -272,7 +306,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/eiffeltower.jpg"/>
-                          Tour Eiffel 
+                            <span>Tour Eiffel </span>
                           <div class="circle">
                           <div id="caroussel_2"></div>
                           <div></div>
@@ -288,7 +322,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/louvre.jpg"/>
-                            Musée du louvre
+                            <span> Musée du louvre</span>
                             <div class="circle">
                             <div></div>
                             <div></div>
@@ -305,7 +339,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                           <img src="assets/img/arc-de-triomphe.jpg"/>
-                          Arc de Triomphe
+                          <span>Arc de Triomphe</span>
                           <div class="circle">
                           <div></div>
                           <div></div>
@@ -329,8 +363,8 @@
 
                 <!-- Se reposer -->
             <section>
-                <div class="divertir">
-                    <div class="first_caroussel">
+                <div class="immmanquable">
+                    <div class="bloc_txt">
 
                         <h5>Se reposer</h5>
                         <p>
@@ -345,7 +379,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/01_bristol.jpg"/>
-                          Le Bristol Paris
+                         <span>Le Bristol Paris</span> 
                           <div class="circle">
                           <div></div>
                           <div></div>
@@ -360,7 +394,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/02_reserve.jpg"/>
-                            La Réserve Paris - Hotel and Spa
+                            <span>La Réserve Paris - Hotel and Spa</span>
                             <div class="circle">
                             <div></div>
                             <div></div>
@@ -376,7 +410,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                           <img src="assets/img/03_fourseason.jpg"/>
-                          Four Seasons Hotel George V
+                          <span>Seasons Hotel George V</span> 
                           <div class="circle">
                           <div></div>
                           <div></div>
@@ -394,7 +428,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/eiffeltower.jpg"/>
-                          Tour Eiffel 
+                          <span>Eiffel </span> 
                           <div class="circle">
                           <div id="caroussel_2"></div>
                           <div></div>
@@ -410,7 +444,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                             <img src="assets/img/louvre.jpg"/>
-                            Musée du louvre
+                            <span>Musée du louvre</span>
                             <div class="circle">
                             <div></div>
                             <div></div>
@@ -427,7 +461,7 @@
                         <div>
                             <i class="fas fa-heart"></i>
                           <img src="assets/img/arc-de-triomphe.jpg"/>
-                          Arc de Triomphe
+                          <span>de Triomphe</span> 
                           <div class="circle">
                           <div></div>
                           <div></div>
@@ -451,8 +485,8 @@
 
                         <!-- Se restaurer-->
                     <section>
-                        <div class="divertir">
-                            <div class="first_caroussel">
+                        <div class="immmanquable">
+                            <div class="bloc_txt">
         
                                 <h5>Se restaurer</h5>
                                 <p>
@@ -466,7 +500,7 @@
                                 <div>
                                     <i class="fas fa-heart"></i>
                                     <img src="assets/img/01_resto.jpg"/>
-                                    Verjus
+                                    <span>Verjus</span>
                                   <div class="circle">
                                   <div></div>
                                   <div></div>
@@ -482,7 +516,7 @@
                                 <div>
                                     <i class="fas fa-heart"></i>
                                     <img src="assets/img/02_resto.jpg"/>
-                                    Le 114 Faubourg
+                                    <span> Le 114 Faubourg</span>
                                     <div class="circle">
                                     <div></div>
                                     <div></div>
@@ -499,7 +533,7 @@
                                 <div>
                                     <i class="fas fa-heart"></i>
                                   <img src="assets/img/03_resto.jpg"/>
-                                  Frenchie
+                                  <span>Frenchie</span>
                                   <div class="circle">
                                   <div></div>
                                   <div></div>
@@ -518,7 +552,7 @@
                                 <div>
                                     <i class="fas fa-heart"></i>
                                     <img src="assets/img/eiffeltower.jpg"/>
-                                  Tour Eiffel 
+                                  <span>Tour Eiffel </span>
                                   <div class="circle">
                                   <div id="caroussel_2"></div>
                                   <div></div>
@@ -534,7 +568,7 @@
                                 <div>
                                     <i class="fas fa-heart"></i>
                                     <img src="assets/img/louvre.jpg"/>
-                                    Musée du louvre
+                                    <span>Musée du louvre</span>
                                     <div class="circle">
                                     <div></div>
                                     <div></div>
@@ -551,7 +585,7 @@
                                 <div>
                                     <i class="fas fa-heart"></i>
                                   <img src="assets/img/arc-de-triomphe.jpg"/>
-                                  Arc de Triomphe
+                                  <span>de Triomphe</span> 
                                   <div class="circle">
                                   <div></div>
                                   <div></div>
