@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-    overflow: scroll;
-}
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
@@ -110,14 +106,6 @@ h1 > span {
     color: #fe5d5d;
 }
 
-/* input#site-search {
-    width: 250px;
-    border-radius: 10px;
-    border: lightgrey solid 2px;
-    box-shadow: none;
-    height: 40px;
-} */
-
 .search {
     display: flex;
     margin-left: 15px;
@@ -170,41 +158,63 @@ form.search::after {
     display: flex;
 }
 
+#close {
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #000;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#close i {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
 /* MODAL ET FORMULAIRE */
 
 .modal {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    display: flex;
     position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal form {
     height: 588px;
     width: 100%;
-    background-color: #e5e5e5;
+    background-color: #f9f1eb;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 55px 0 25px 0;
     border-radius: 10px;
     max-width: 500px;
-    margin-top: 110px;
-    z-index: 10000;
     margin: auto;
 }
 
 h6 {
     font-size: 22px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-weight: bold;
+}
+
+p.message-send {
+    color: #7359db;
+    margin-bottom: 10px;
 }
 
 .modal input,
@@ -219,7 +229,7 @@ textarea {
 }
 
 .modal input[type="submit"] {
-    background-color: #7359dc;
+    background-color: #fd5d5d;
     color: white;
     width: 81%;
     cursor: pointer;
@@ -230,7 +240,7 @@ textarea {
 }
 
 .modal input[type="submit"]:hover {
-    background-color: #876ee7;
+    background-color: #fc7979;
 }
 
 /* ----------- */
@@ -452,10 +462,13 @@ h4:before {
     flex: 1;
     border: 2px solid lightgray;
     border-radius: 10px;
-    max-width: 275px;
     padding: 0 10px;
     line-height: 1.2;
     cursor: pointer;
+}
+
+.conseils ul li:nth-child(-n + 3) {
+    margin-right: 20px;
 }
 
 .conseils ul li:hover {
@@ -603,6 +616,12 @@ h5 {
     right: -22px;
 }
 
+.fleche:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
 .half-circle {
     height: 14px;
     width: 14px;
@@ -624,6 +643,107 @@ h5 {
     margin-left: 8px;
     margin-top: 2px;
 }
+
+/* ----------- */
+/* GUIDE */
+
+.guide {
+    display: flex;
+    position: relative;
+    margin-top: 60px;
+}
+
+.guide > div {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    height: 100%;
+    min-height: 330px;
+}
+
+.guide > div > div {
+    background-color: white;
+    flex-shrink: 0;
+    width: calc(100% / 3 - (60px / 3));
+}
+
+.guide > div > div:not(:last-child) {
+    margin-right: 30px;
+}
+
+.guide > div img {
+    height: 205px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+}
+
+.guide > div img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.guide div > div {
+    position: relative;
+    height: 510px;
+    background-color: #f9f1ec;
+}
+
+.guide > div > div > span img {
+    position: absolute;
+    width: 30px;
+}
+
+.guide div > div span img {
+    position: absolute;
+    bottom: 50%;
+    background-color: #fff;
+    display: flex;
+    width: 72px;
+    border-radius: 50%;
+    z-index: 1000;
+    left: 42%;
+    height: auto;
+}
+
+.guide div > div span img:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.guide div > div > p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+.guide div > div > p:nth-child(1) {
+    height: 20px;
+    font-weight: 600;
+}
+
+.guide div > div > p:nth-child(2) {
+    height: 60px;
+    overflow: hidden;
+}
+
+.guide div > div > div {
+    padding: 50px 30px;
+}
+
+.guide div > div i {
+    display: flex;
+    justify-content: center;
+    color: #fe5d5d;
+    margin-bottom: 20px;
+}
+
 /* ----------- */
 /* FOOTER */
 
@@ -643,6 +763,7 @@ footer .container {
 
 footer img {
     height: 60px;
+    margin-right: 20px;
 }
 
 .container .deb_header > i {
@@ -650,39 +771,6 @@ footer img {
 }
 
 /* MEDIAS QUERY */
-
-/* @media (min-width: 1310px) {
-    main nav.subNav ul li:nth-child(7) {
-        display: none !important;
-    }
-} */
-
-/* @media (max-width: 1310) { */
-/* main nav.subNav ul li:nth-child(7) l {
-        margin-right: 20px;
-    }
-
-    /* main nav.subNav ul {
-        width: calc(100% / 4);
-        flex: 0 0 auto;
-        flex: 1;
-        margin-bottom: 20px;
-    }*/
-
-/* main nav.subNav ul li:not(:last-child) {
-        margin-right: 0px;
-    }
-
-    main nav.subNav ul li {
-        width: calc(25% - (60px / 4)) !important;
-        margin-right: 0 !important;
-    }
-
-    main nav.subNav ul {
-        flex-wrap: wrap !important;
-    }*/
-
-/* } */
 
 @media (max-width: 1328px) {
     .menu div:nth-child(7) {
@@ -753,19 +841,12 @@ footer img {
         top: 48%;
         right: 0px;
     }
-
-    .conseils ul li {
-        width: 100%;
-        flex: 0 0 auto;
-        margin-bottom: 20px;
-    }
 }
 
 @media (max-width: 723px) {
-    .container:not(.bloc_photos) {
-        padding: 0 30px;
+    h1 {
+        font-size: 4vh;
     }
-
     .menu div {
         min-width: calc(100% / 2 - (60px / 2));
     }
@@ -803,11 +884,22 @@ footer img {
         padding: 0;
     }
 
-    .ariane {
-        padding: 0 20px;
+    .bloc_photos .box1 {
+        margin: 0 -30px;
     }
-    .paris {
-        padding: 0 20px;
+
+    .conseils ul li {
+        width: 100%;
+        flex: none;
+        margin-bottom: 20px;
+    }
+
+    .conseils ul li:nth-child(-n + 3) {
+        margin-right: 0;
+    }
+
+    .conseils ul {
+        width: 100%;
     }
     .immmanquable {
         display: inherit;
@@ -852,6 +944,10 @@ footer img {
 
     .caroussel img {
         height: 262px;
+    }
+
+    .guide > div > div {
+        width: calc(100% / 2.5 - (20px / 3));
     }
 
     .bloc_photos .box1 img {

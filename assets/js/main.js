@@ -4,8 +4,17 @@ $.addEventListener("DOMContentLoaded", () => {
     console.log("Page chargée");
 
     $.querySelector(".connect").addEventListener("click", () => {
-        $.querySelector(".hidden").classList.toggle("display");
+        //   Modifier la classe de la balise p
+        $.querySelector(".hidden").classList.add("display");
     });
+
+    $.querySelector("#close").addEventListener("click", () => {
+        $.querySelector(".hidden").classList.remove("display");
+    });
+
+    // $.querySelector(".connect").addEventListener("click", () => {
+    //     $.querySelector(".hidden").classList.toggle("display");
+    // });
 
     const message_send = $.querySelector(".message_send");
 
